@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
 </head>
-<body>
+<body class="reg">
     <div class="topnav">
         <a href="main_page.html"> 
             <sports class="active">Home</sports>
@@ -18,16 +18,32 @@
             <sports>Register</sports>
         </a>
     </div>
-    <h2>
-        Register for Sports
-    </h2>
-    <form>
-        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-        <label for="vehicle1"> I have a bike</label><br>
-        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-        <label for="vehicle2"> I have a car</label><br>
-        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-        <label for="vehicle3"> I have a boat</label>
-    </form>
+    <div class="regbox">
+        <h2>
+            Registration
+        </h2>
+        <form>
+            <input type="text" size="40" placeholder="First name"><br><br>
+            <input type="text" size="40" placeholder="Last name"><br><br>
+            <input type="text" size="40" placeholder="Age"><br><br>
+            <!-- <label>Gender:</label> -->
+            <select style="width: 98%;">
+                <option>Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select><br>
+            <!-- <input type="radio">Male<input type="radio">Female<input type="radio">Other<br> -->
+            <!-- <label>Select sports:</label><br> -->
+            <input type="checkbox">
+            <label>Football</label><br>
+            <input type="checkbox">
+            <label>Cricket</label><br>
+            <input type="checkbox">
+            <label>Basketball</label><br>
+            <input type="checkbox">
+            <label>Volleyball</label><br>
+        </form>
+    </div>
 </body>
 </html>

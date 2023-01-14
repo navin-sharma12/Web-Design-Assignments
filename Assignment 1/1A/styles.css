@@ -1,8 +1,11 @@
+/* body css */
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: poppins;
 }
-  
+
+/* css for navigation bar */
+
 .topnav {
     overflow: hidden;
     background-color: #333;
@@ -19,9 +22,11 @@ body {
 }
 
 .topnav sports:hover {
-    background-color: #ddd;
+    background-color: white;
     color: blue;
 }
+
+/* main page css */
 
 .main {
     position: relative;
@@ -30,7 +35,8 @@ body {
 }
 
 .left {
-    font-family: sans-serif;
+    font-style: italic;
+    font-family: poppins;
     position: absolute;
     font-size: 150%;
     top: 40%;
@@ -38,20 +44,20 @@ body {
 }
 
 #page1 {
-    width: 65%;
+    width: 75%;
     margin-left: auto;
     margin-right: auto;
 }
 .sports {
     float: left;
-    width: 150px;
+    width: 180px;
     padding: 20px;
     margin: 20px;
     border: 1px solid blue;
 }
 .sports img {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
 }
 .sports:hover {
     cursor: pointer;
@@ -68,4 +74,41 @@ a:visited {
 }
 a:hover {
     color: aquamarine;
+}
+
+/*registration css*/
+
+.reg {
+    background-color: rgb(205, 205, 205);
+}
+
+.regbox {
+    position: relative;
+    margin-top: 5%;
+    margin-left: 38%;
+    margin-right: auto;
+    width: 24%;
+    margin-bottom: auto;
+    border-radius: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    background: #e6e6e6;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+}
+
+form {
+    padding: 25px;
+}
+
+select {
+    border: 0px;
+    box-sizing: border-box;
+}
+
+input {
+    border: 0px;
+}
+
+h2 {
+    text-align: center;
 }
