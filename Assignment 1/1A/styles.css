@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
 }
   
 .topnav {
@@ -9,6 +9,7 @@ body {
 }
 
 .topnav sports {
+    cursor: pointer;
     float: left;
     color: white;
     text-align: center;
@@ -29,6 +30,7 @@ body {
 }
 
 .left {
+    font-family: sans-serif;
     position: absolute;
     font-size: 150%;
     top: 40%;
