@@ -165,8 +165,35 @@ option{
 
 /* pricing page css */
 
-table th{
-    border: 1px solid black;
-    padding: 5px;
-    border-collapse: collapse;
+.tables {
+    margin: 0;
+    background: linear-gradient(45deg, #408bed, #5f2c82);
+    font-family: sans-serif;
+    font-family: poppins;
+    font-weight: 100;
 }
+
+table {
+    width: 800px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.container {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+th {
+    text-align: left;
+}
+
+th, td {
+    padding: 15px;
+  background-color: rgba(255,255,255,0.2);
+  color: rgb(218, 217, 217);
+}
+
