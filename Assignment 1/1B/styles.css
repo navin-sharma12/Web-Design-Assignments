@@ -1,0 +1,159 @@
+/* body css */
+body {
+    margin: 0;
+    font-family: poppins;
+    background-color: rgb(0, 0, 0);
+}
+
+.index-page {
+    margin: 0;
+    font-family: poppins;
+    background-color: rgb(255, 255, 255);
+}
+
+/* css for navigation bar */
+
+.topnav {
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+}
+
+.topnav music {
+    cursor: pointer;
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.topnav music:hover {
+    background-color: red;
+    color: white;
+}
+
+header {
+    text-align: center;
+    color: white;
+}
+
+header img {
+    height: 5%;
+    width: 5%;
+}
+
+/* video */
+
+video {
+    width: 75%;
+    height: 75%;
+    margin-left: 50vw;
+    transform: translate(-50%);
+}
+
+footer {
+    text-align: center;
+    padding: 3px;
+    color: white;
+}
+
+/* form css*/
+
+.reg {
+    background-color: rgb(205, 205, 205);
+}
+
+.regbox {
+    position: relative;
+    margin-top: 5%;
+    margin-left: 38%;
+    margin-right: auto;
+    width: 24%;
+    margin-bottom: auto;
+    border-radius: 20px;
+    padding: 2px;
+    box-sizing: border-box;
+    background: #e6e6e6;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+}
+
+form {
+    padding: 35px;
+}
+
+form img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+h3 {
+    text-align: center;
+}
+
+select {
+    border: 0px;
+    box-sizing: border-box;
+}
+
+input {
+    width: 100%;
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 30px;
+    margin-top: 5px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    background: transparent;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 3px;
+    margin-top: 30px;
+    color: #000000;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+select:invalid{
+    color: gray;
+}
+
+option{
+    color: black;
+}
+
+.regbox button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #000000;
+    font-size: 16px;
+    border: none;
+    background: #e6e6e6;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 10px;
+    letter-spacing: 4px
+}
+  
+.regbox button:hover {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    border-radius: none;
+    box-shadow: 0 0 5px #ffffff,
+                0 0 25px #ffffff,
+                0 0 50px #ffffff,
+                0 0 100px #ffffff;
+}
+
+/* audio css*/
