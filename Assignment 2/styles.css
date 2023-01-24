@@ -19,25 +19,42 @@ body {
   font-size: 28px;
 }
 
+li {
+  list-style: none;
+}
+
 .home {
-  padding-top: 20px;
-  list-style-image: url("images/home.svg");
+  padding-top: 20%;
 }
 
-.about {
-  list-style-image: url("images/human.svg");
+.home img {
+  margin-left: -25px;
+  width: 30px;
+  height: 30px;
 }
 
-.projects {
-  list-style-image: url("images/project.png");
+.about img {
+  margin-left: -25px;
+  width: 30px;
+  height: 30px;
 }
 
-.education {
-  list-style-image: url("images/education\ icon.png");
+.projects img {
+  margin-left: -25px;
+  width: 30px;
+  height: 30px;
 }
 
-.contact {
-  list-style-image: url("images/contact.svg");
+.education img {
+  margin-left: -25px;
+  width: 30px;
+  height: 35px;
+}
+
+.contact img {
+  margin-left: -25px;
+  width: 30px;
+  height: 30px;
 }
 
 .column_left a:hover {
@@ -159,4 +176,32 @@ body {
   padding-top: 5.5%;
   font-size: large;
   padding-left: 75%;
+}
+
+.column_right_education img {
+  float: right;
+  margin-top: 10%;
+  width: 500px;
+  height: 400px;
+}
+
+.column_right_education p {
+  text-align: center;
+  float: left;
+  margin-top: 20%;
+  font-size: 60px;
+  margin-left: 10%;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+}
+
+#id1 {
+  text-align: left;
+  float: left;
+  position: absolute;
+  margin-top: 26%;
+  font-style: normal;
+  margin-left: 31%;
+  font-size: 25px;
 }
