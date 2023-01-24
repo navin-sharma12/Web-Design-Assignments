@@ -23,9 +23,9 @@ li {
   list-style: none;
 }
 
-.home {
+/* .home {
   padding-top: 20%;
-}
+} */
 
 .home img {
   margin-left: -25px;
@@ -89,8 +89,26 @@ li {
 
 .column_right h1 {
   text-align: center;
+  margin-left: 27%;
   font-family: Arial, Helvetica, sans-serif;
-  color: black;
+  background-image: linear-gradient(
+    -225deg,
+    #1ccef6 0%,
+    #89ccf9 29%,
+    #18a2bd 67%,
+    #4587b4 100%
+  );
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
 }
 
 .column_right h3 {
@@ -175,7 +193,7 @@ li {
   color: rgb(255, 255, 255);
   padding-top: 5.5%;
   font-size: large;
-  padding-left: 75%;
+  margin-left: 75%;
 }
 
 .column_right_education img {
