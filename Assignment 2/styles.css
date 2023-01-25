@@ -23,9 +23,9 @@ li {
   list-style: none;
 }
 
-/* .home {
+.home {
   padding-top: 20%;
-} */
+}
 
 .home img {
   margin-left: -25px;
@@ -89,26 +89,8 @@ li {
 
 .column_right h1 {
   text-align: center;
-  margin-left: 27%;
   font-family: Arial, Helvetica, sans-serif;
-  background-image: linear-gradient(
-    -225deg,
-    #1ccef6 0%,
-    #89ccf9 29%,
-    #18a2bd 67%,
-    #4587b4 100%
-  );
-  text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textclip 2s linear infinite;
-  display: inline-block;
-}
-
-@keyframes textclip {
-  to {
-    background-position: 200% center;
-  }
+  color: black;
 }
 
 .column_right h3 {
@@ -183,30 +165,31 @@ li {
 .column_right_about #img4 {
   position: absolute;
   float: right;
-  padding-top: 30%;
-  padding-left: 43%;
+  margin-top: 30%;
+  margin-left: 43%;
 }
 
 .years {
   position: absolute;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(255, 255, 255);
-  padding-top: 5.5%;
+  padding-top: 13.5%;
   font-size: large;
   margin-left: 75%;
 }
 
 .column_right_education img {
   float: right;
-  margin-top: 10%;
-  width: 500px;
-  height: 400px;
+  margin-top: 1%;
+  margin-right: 5%;
+  width: 360px;
+  height: 260px;
 }
 
 .column_right_education p {
   text-align: center;
   float: left;
-  margin-top: 20%;
+  margin-top: 5%;
   font-size: 60px;
   margin-left: 10%;
   color: black;
@@ -218,8 +201,629 @@ li {
   text-align: left;
   float: left;
   position: absolute;
-  margin-top: 26%;
+  margin-top: 10%;
   font-style: normal;
-  margin-left: 31%;
+  margin-left: 38%;
   font-size: 25px;
+}
+
+.education_left img {
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin-top: 6%;
+  margin-left: 13%;
+}
+
+.education_right img {
+  width: 180px;
+  height: 180px;
+  margin-right: 13%;
+}
+
+.education_left p {
+  font-size: large;
+  margin-left: -27%;
+  margin-top: 20%;
+}
+
+.education_right p {
+  font-size: large;
+  text-align: center;
+  margin-left: 6%;
+  margin-top: 1.8%;
+}
+
+.float-container {
+  border: 3px solid #fff;
+  padding: 20px;
+}
+
+.float-child {
+  width: 30%;
+  float: left;
+  padding: 20px;
+  border: 2px solid rgb(0, 0, 0);
+}
+
+.float-child img {
+  float: left;
+  width: 30px;
+  height: auto;
+}
+
+.float-child label {
+  color: black;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  margin-left: 5px;
+}
+
+.float-child2 {
+  width: 30%;
+  float: left;
+  margin-left: 20px;
+  padding: 20px;
+  border: 2px solid rgb(0, 0, 0);
+}
+
+.float-child2 img {
+  float: left;
+  width: 30px;
+  height: auto;
+}
+
+.float-child2 label {
+  color: black;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  margin-left: 5px;
+}
+
+.float-child3 {
+  width: 30%;
+  float: left;
+  margin-left: 1px;
+  margin-top: 20px;
+  padding: 20px;
+  border: 2px solid rgb(0, 0, 0);
+}
+
+.float-child3 img {
+  float: left;
+  width: 30px;
+  height: auto;
+}
+
+.float-child3 label {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  margin-left: 5px;
+}
+
+.float-child4 iframe {
+  margin-top: 2%;
+  width: 960px;
+  height: 450px;
+}
+
+@media  screen and (max-width: 768px) {
+  .column_left a {
+    cursor: pointer;
+    color: white;
+    padding-left: 3%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+  .column_right_img1 {
+    float: left;
+    padding: 5px;
+    margin-left: 30%;
+    margin-right: auto;
+    width: 3%;
+    height: 3%;
+  }
+  
+  .column_right_img2 {
+    float: left;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 3%;
+    height: 3%;
+  }
+
+  .column_right_about #img3 {
+    height: 300px;
+    width: 245px;
+    padding-top: 2%;
+    margin-left: auto;
+    margin-right: 20%;
+  }
+
+  .column_right_about p {
+    margin-top: auto;
+    text-align: justify;
+    padding-top: 55%;
+    padding-right: 2%;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+  }
+
+  .column_right_about h1 {
+    margin-top: auto;
+    padding-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+  }
+
+  .column_right_about #img4 {
+    margin-top: 28.5%;
+    margin-left: -1%;
+    float: left;
+  }
+
+  .years {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: large;
+    margin-left: 41%;
+    margin-top: -62.5%;
+  }
+
+  .column_right_education img {
+    text-align: center;
+    margin-right: 20%;
+    margin-top: 5%;
+    width: 260px;
+    height: 160px;
+  }
+  
+  .column_right_education p {
+    text-align: center;
+    font-size: 35px;
+    margin-left: 24%;
+    margin-top: 1%;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+  }
+  
+  #id1 {
+    text-align: left;
+    float: left;
+    position: absolute;
+    margin-top: 33%;
+    font-style: normal;
+    margin-left: 50%;
+    font-size: 25px;
+  }
+  
+  .education_left img {
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin-top: 6%;
+    margin-left: 23%;
+  }
+  
+  .education_right img {
+    width: 120px;
+    height: 120px;
+    margin-right: 28%;
+    margin-top: 1%;
+  }
+  
+  .education_left p {
+    font-size: large;
+    margin-left: 3%;
+    margin-top: 2%;
+  }
+  
+  .education_right p {
+    font-size: large;
+    text-align: center;
+    margin-left: 6%;
+    margin-top: 1.8%;
+  }
+
+  .float-container {
+    border: 2px solid #fff;
+    padding: 10px;
+  }
+  
+  .float-child {
+    width: 30%;
+    padding: 20px;
+    border: 2px solid rgb(0, 0, 0);
+  }
+  
+  .float-child img {
+    width: 20px;
+    height: auto;
+  }
+  
+  .float-child label {
+    color: black;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    margin-left: 5px;
+  }
+  
+  .float-child2 {
+    width: 30%;
+    margin-top: 95px;
+    padding: 20px;
+    margin-left: -35.8%;
+    border: 2px solid rgb(0, 0, 0);
+  }
+  
+  .float-child2 img {
+    width: 20px;
+    position: relative;
+    margin-top: 5%;
+    float: left;
+  }
+  
+  .float-child2 label {
+    color: black;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+  }
+  
+  .float-child3 {
+    width: 30%;
+    float: left;
+    margin-left: -35.8%;
+    margin-top: 27%;
+    padding: 20px;
+    border: 2px solid rgb(0, 0, 0);
+  }
+  
+  .float-child3 img {
+    width: 20px;
+    height: auto;
+  }
+  
+  .float-child3 label {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    margin-left: 5px;
+  }
+  
+  .float-child4 iframe {
+    margin-top: 2%;
+    width: 500px;
+    height: 400px;
+  }
+}
+
+@media  screen and (max-width: 365px) {
+  .column_left {
+    float: left;
+    width: 10%;
+    margin-right: 10px;
+    padding: 0 20px;
+    height: 100vh;
+    background-color: rgb(128, 188, 241);
+  }
+  
+  .column_left a {
+    visibility: hidden;
+    float: left;
+    position: absolute;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  .home img {
+    margin-left: -45px;
+    width: 20px;
+    height: 20px;
+    margin-top: 30%;
+    visibility: visible;
+  }
+  
+  .about img {
+    margin-left: -45px;
+    width: 20px;
+    height: 20px;
+    margin-top: 70%;
+    visibility: visible;
+  }
+  
+  .projects img {
+    margin-left: -45px;
+    width: 20px;
+    height: 20px;
+    margin-top: 73%;
+    visibility: visible;
+  }
+  
+  .education img {
+    margin-left: -45px;
+    width: 20px;
+    height: 20px;
+    margin-top: 60%;
+    visibility: visible;
+  }
+  
+  .contact img {
+    margin-left: -45px;
+    width: 20px;
+    height: 20px;
+    margin-top: 130%;
+    visibility: visible;
+  }
+  
+  .column_left a:hover {
+    color: black;
+    font-weight: bolder;
+  }
+  
+  .column_left img {
+    background-color: none;
+    float: left;
+  }
+  
+  .column_left p {
+    cursor: pointer;
+    color: white;
+    text-align: left;
+    margin-top: 50%;
+    margin-left: -75%;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  
+  .column_right #img2 {
+    position: relative;
+    height: 145px;
+    width: 150px;
+    padding-top: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .column_right h1 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: larger;
+  }
+  
+  .column_right h3 {
+    text-align: center;
+    color: black;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .column_right p {
+    text-align: center;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .column_right_img1 {
+    float: left;
+    padding: 5px;
+    margin-left: 29%;
+    margin-right: auto;
+    width: 7%;
+    height: 7%;
+  }
+  
+  .column_right_img2 {
+    float: left;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 7%;
+    height: 7%;
+  }
+  
+  .column_right_about h1 {
+    margin-top: auto;
+    padding-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: large;
+  }
+  
+  .column_right_about #img3 {
+    float: right;
+    position: relative;
+    height: 180px;
+    width: 155px;
+    padding-top: 2%;
+    display: block;
+    margin-left: 13%;
+  }
+  
+  .column_right_about p {
+    text-align: justify;
+    margin-top: 10%;
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+  }
+  
+  .column1 {
+    float: left;
+    font-size: smaller;
+    margin-right: 15%;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  progress {
+    height: 10px;
+    width: 90px;
+  }
+  
+  .column2 {
+    font-size: smaller;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .column_right_about #img4 {
+    margin-top: 38%;
+    margin-left: -1%;
+    height: 80px;
+    width: 145px;
+    float: left;
+  }
+
+  .years {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: x-small;
+    margin-left: 35%;
+    margin-top: -90%;
+  }
+  
+  .column_right_education img {
+    float: right;
+    margin-top: 1%;
+    margin-right: 18%;
+    width: 160px;
+    height: 90px;
+  }
+  
+  .column_right_education p {
+    text-align: center;
+    float: left;
+    margin-top: 2%;
+    font-size: 20px;
+    margin-left: 23%;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+  }
+  
+  #id1 {
+    text-align: left;
+    float: left;
+    position: absolute;
+    margin-top: 35%;
+    font-style: normal;
+    margin-left: 38%;
+    font-size: 20px;
+  }
+  
+  .education_left img {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin-top: 10%;
+    margin-left: 22%;
+  }
+  
+  .education_right img {
+    width: 90px;
+    height: 90px;
+    margin-top: 10%;
+    margin-right: 27.5%;
+  }
+  
+  .education_left p {
+    font-size: x-small;
+    margin-left: 3%;
+    margin-top: 5%;
+  }
+  
+  .education_right p {
+    font-size: x-small;
+    text-align: center;
+    margin-left: 4%;
+    margin-top: 6%;
+  }
+  
+  .float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+  }
+  
+  .float-child {
+    width: 30%;
+    float: left;
+    padding: 20px;
+    border: 2px solid rgb(0, 0, 0);
+  }
+  
+  .float-child img {
+    float: left;
+    width: 30px;
+    height: auto;
+  }
+  
+  .float-child label {
+    color: black;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    margin-left: 5px;
+  }
+  
+  .float-child2 {
+    width: 30%;
+    float: left;
+    margin-left: 20px;
+    padding: 20px;
+    border: 2px solid rgb(0, 0, 0);
+  }
+  
+  .float-child2 img {
+    float: left;
+    width: 30px;
+    height: auto;
+  }
+  
+  .float-child2 label {
+    color: black;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    margin-left: 5px;
+  }
+  
+  .float-child3 {
+    width: 30%;
+    float: left;
+    margin-left: 1px;
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid rgb(0, 0, 0);
+  }
+  
+  .float-child3 img {
+    float: left;
+    width: 30px;
+    height: auto;
+  }
+  
+  .float-child3 label {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    margin-left: 5px;
+  }
+  
+  .float-child4 iframe {
+    margin-top: 2%;
+    width: 960px;
+    height: 450px;
+  }
 }
