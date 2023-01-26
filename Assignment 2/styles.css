@@ -93,6 +93,25 @@ li {
   color: black;
 }
 
+h1 span{
+  transition: .5s linear
+}
+h1:hover span:nth-child(1){
+  margin-right: 5px
+}
+h1:hover span:nth-child(1):after{
+  content: "";
+}
+h1:hover span:nth-child(2){
+  margin-left: 30px
+}
+h1:hover span{
+  color: rgb(128, 188, 241);
+  text-shadow: 0 0 10px rgb(255, 255, 255),
+               0 0 20px rgb(255, 255, 255), 
+               0 0 40px rgb(255, 255, 255);
+}
+
 .column_right h3 {
   text-align: center;
   color: black;
@@ -310,6 +329,77 @@ li {
   height: 450px;
 }
 
+.gallery {
+  margin-top: 3%;
+  margin-left: 10%;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+.overlay {
+  position: absolute;
+  margin-top: -12.5%;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+  opacity: 0;
+  transition: .5s ease;
+}
+
+.overlay_image {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery:hover .overlay{
+  opacity: 1;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery1 {
+  margin-top: -12.5%;
+  margin-left: 10%;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+.gallery1:hover .overlay{
+  opacity: 1;
+}
+
+.gallery1 img {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery2 {
+  margin-top: -12.5%;
+  margin-left: 32.5%;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+.gallery2:hover .overlay{
+  opacity: 1;
+}
+
+.gallery2 img {
+  width: 100%;
+  height: 100%;
+}
+
+.desc {
+  padding: 15px;
+  text-align: center;
+}
+
 @media  screen and (max-width: 768px) {
   .column_left a {
     cursor: pointer;
@@ -361,6 +451,25 @@ li {
     padding-top: 10px;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
+  }
+
+  h1 span{
+    transition: .5s linear
+  }
+  h1:hover span:nth-child(1){
+    margin-right: 5px
+  }
+  h1:hover span:nth-child(1):after{
+    content: "";
+  }
+  h1:hover span:nth-child(2){
+    margin-left: 30px
+  }
+  h1:hover span{
+    color: rgb(128, 188, 241);
+    text-shadow: 0 0 10px rgb(255, 255, 255),
+                 0 0 20px rgb(255, 255, 255), 
+                 0 0 40px rgb(255, 255, 255);
   }
 
   .column_right_about #img4 {
@@ -505,6 +614,77 @@ li {
     width: 500px;
     height: 400px;
   }
+
+  .gallery {
+    margin-top: 3%;
+    margin-left: 10%;
+    border: 1px solid #ccc;
+    float: left;
+    width: 120px;
+  }
+  
+  .overlay {
+    position: absolute;
+    margin-top: -20.5%;
+    border: 1px solid #ccc;
+    float: left;
+    width: 120px;
+    opacity: 0;
+    transition: .5s ease;
+  }
+  
+  .overlay_image {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .gallery:hover .overlay{
+    opacity: 1;
+  }
+  
+  .gallery img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .gallery1 {
+    margin-top: -20%;
+    margin-left: -41.5%;
+    border: 1px solid #ccc;
+    float: left;
+    width: 120px;
+  }
+  
+  .gallery1:hover .overlay{
+    opacity: 1;
+  }
+  
+  .gallery1 img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .gallery2 {
+    margin-top: 27%;
+    margin-left: -41.5%;
+    border: 1px solid #ccc;
+    float: left;
+    width: 120px;
+  }
+  
+  .gallery2:hover .overlay{
+    opacity: 1;
+  }
+  
+  .gallery2 img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .desc {
+    padding: 15px;
+    text-align: center;
+  }
 }
 
 @media  screen and (max-width: 365px) {
@@ -602,6 +782,25 @@ li {
     font-family: Arial, Helvetica, sans-serif;
     color: black;
     font-size: larger;
+  }
+
+  h1 span{
+    transition: .5s linear
+  }
+  h1:hover span:nth-child(1){
+    margin-right: 5px
+  }
+  h1:hover span:nth-child(1):after{
+    content: "";
+  }
+  h1:hover span:nth-child(2){
+    margin-left: 30px
+  }
+  h1:hover span{
+    color: rgb(128, 188, 241);
+    text-shadow: 0 0 10px rgb(255, 255, 255),
+                 0 0 20px rgb(255, 255, 255), 
+                 0 0 40px rgb(255, 255, 255);
   }
   
   .column_right h3 {
@@ -753,19 +952,19 @@ li {
   
   .float-container {
     border: 3px solid #fff;
-    padding: 20px;
+    padding: 10px;
   }
   
   .float-child {
-    width: 30%;
+    width: 60%;
     float: left;
-    padding: 20px;
-    border: 2px solid rgb(0, 0, 0);
+    padding: 10px;
+    border: 1px solid rgb(0, 0, 0);
   }
   
   .float-child img {
     float: left;
-    width: 30px;
+    width: 20px;
     height: auto;
   }
   
@@ -773,21 +972,22 @@ li {
     color: black;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
+    font-size: x-small;
     margin-left: 5px;
   }
   
   .float-child2 {
-    width: 30%;
+    width: 60%;
+    margin-left: 0%;
+    margin-top: 4%;
     float: left;
-    margin-left: 20px;
-    padding: 20px;
-    border: 2px solid rgb(0, 0, 0);
+    padding: 10px;
+    border: 1px solid rgb(0, 0, 0);
   }
   
   .float-child2 img {
     float: left;
-    width: 30px;
+    width: 20px;
     height: auto;
   }
   
@@ -795,35 +995,107 @@ li {
     color: black;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
+    font-size: x-small;
     margin-left: 5px;
   }
   
   .float-child3 {
-    width: 30%;
+    width: 60%;
+    margin-left: 0%;
+    margin-top: 4%;
     float: left;
-    margin-left: 1px;
-    margin-top: 20px;
-    padding: 20px;
-    border: 2px solid rgb(0, 0, 0);
+    padding: 10px;
+    border: 1px solid rgb(0, 0, 0);
   }
   
   .float-child3 img {
     float: left;
-    width: 30px;
+    width: 20px;
     height: auto;
   }
   
   .float-child3 label {
     color: black;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
+    font-size: x-small;
     margin-left: 5px;
   }
   
   .float-child4 iframe {
-    margin-top: 2%;
-    width: 960px;
-    height: 450px;
+    margin-top: 5%;
+    width: 250px;
+    height: 250px;
+  }
+
+  .gallery {
+    margin-top: 3%;
+    margin-left: 10%;
+    border: 1px solid #ccc;
+    float: left;
+    width: 80px;
+  }
+  
+  .overlay {
+    position: absolute;
+    margin-top: -31.5%;
+    border: 1px solid #ccc;
+    float: left;
+    width: 80px;
+    opacity: 0;
+    transition: .5s ease;
+  }
+  
+  .overlay_image {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .gallery:hover .overlay{
+    opacity: 1;
+  }
+  
+  .gallery img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .gallery1 {
+    margin-top: -31%;
+    margin-left: -54.6%;
+    border: 1px solid #ccc;
+    float: left;
+    width: 80px;
+  }
+  
+  .gallery1:hover .overlay{
+    opacity: 1;
+  }
+  
+  .gallery1 img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .gallery2 {
+    margin-top: 38%;
+    margin-left: -55%;
+    border: 1px solid #ccc;
+    float: left;
+    width: 80px;
+  }
+  
+  .gallery2:hover .overlay{
+    opacity: 1;
+  }
+  
+  .gallery2 img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .desc {
+    font-size: x-small;
+    padding: 15px;
+    text-align: center;
   }
 }
