@@ -15,19 +15,25 @@ var socialMedia = {
 };
 
 var t = new Title("CONNECT WITH ME!");
-var count = 3
 
 function addNewRow() {
+  var rows = document.getElementById("myTable").rows;
+  var latestIndex;
+  if (rows.length > 1) {
+    latestIndex = parseInt(rows[rows.length - 2].firstElementChild.nextElementSibling.innerHTML.split(" ")[1]) + 1;
+  }
+  else {
+    latestIndex = 1;
+  }
+
   var tbodyRef = document.getElementsByTagName("tbody")[0];
-
   var tdNode = document.createElement("tr");
-
   var trCheckBoxCell = document.createElement("td");
   trCheckBoxCell.innerHTML = '<input id="checkbox" type="checkbox" onclick="onCheckboxClick(this)"/><br /><br /><img src="down.png" width="25px" onclick="onImageClick(this)">';
   var trStudentCell = document.createElement("td");
-  trStudentCell.innerHTML = "Student " + (parseInt(count) + 1);
+  trStudentCell.innerHTML = "Student " + (parseInt(latestIndex));
   var trAdvisorCell = document.createElement("td");
-  trAdvisorCell.innerHTML = "Teacher " + (parseInt(count) + 1);
+  trAdvisorCell.innerHTML = "Teacher " + (parseInt(latestIndex));
   var trAwardStatus = document.createElement("td");
   trAwardStatus.innerHTML = "Approved";
   var trSemester = document.createElement("td");
@@ -53,6 +59,7 @@ function addNewRow() {
   tbodyRef.appendChild(tdNode);
 
   tdNode = document.createElement("tr");
+  tdNode.setAttribute('style', 'display:none');
   tdNode.setAttribute("class", "dropDownTextArea");
   var trAdvisorDetails = document.createElement("td");
   trAdvisorDetails.setAttribute("colspan", "8")
@@ -61,7 +68,6 @@ function addNewRow() {
   tdNode.appendChild(trAdvisorDetails);
 
   tbodyRef.appendChild(tdNode);
-  count++
 }
 
 var submitSelectedAwards = document.getElementById("button");
@@ -111,17 +117,18 @@ function onCheckboxClick(checkbox) {
     rowSelect.style.backgroundColor = "#fff";
     rowSelect.deleteCell(8); //removes the delete button column
     rowSelect.deleteCell(8);
-    submitSelectedAwards.style.backgroundColor = "grey";
-    submitSelectedAwards.style.borderColor = "grey";
+    
     delete_counter--
     if(delete_counter == 0) {
+      submitSelectedAwards.style.backgroundColor = "grey";
+      submitSelectedAwards.style.borderColor = "grey";
       tdNode = document.getElementsByTagName("th")[8];
-    var deleteColumn = document.getElementById("delete");
-    tdNode.remove(deleteColumn);
+      var deleteColumn = document.getElementById("delete");
+      tdNode.remove(deleteColumn);
 
-    tdNode = document.getElementsByTagName("th")[8];
-    var editColumn = document.getElementById("edit");
-    tdNode.remove(editColumn);
+      tdNode = document.getElementsByTagName("th")[8];
+      var editColumn = document.getElementById("edit");
+      tdNode.remove(editColumn);
     }
   }
 }
@@ -131,12 +138,11 @@ function deleteRow(rowObject) {
 
   document.getElementById("myTable").deleteRow(tr.rowIndex + 1);
   document.getElementById("myTable").deleteRow(tr.rowIndex);
-  
-  submitSelectedAwards.style.backgroundColor = "grey";
-  submitSelectedAwards.style.borderColor = "grey";
   alert("Row deleted successfully!");
   delete_counter--;
   if(delete_counter == 0) {
+    submitSelectedAwards.style.backgroundColor = "grey";
+    submitSelectedAwards.style.borderColor = "grey";
     var tdNode = document.getElementsByTagName("th")[8];
     var deleteColumn = document.getElementById("delete");
     tdNode.remove(deleteColumn);
@@ -145,7 +151,6 @@ function deleteRow(rowObject) {
     var editColumn = document.getElementById("edit");
     tdNode.remove(editColumn);
   }
-  count--;
 }
 
 function editRow(rowObject) {
