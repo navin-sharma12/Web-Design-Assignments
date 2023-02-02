@@ -90,7 +90,8 @@ function onCheckboxClick(checkbox) {
     rowSelect.appendChild(editButton);
 
     //label
-    if(delete_counter == 0) {
+    delete_counter++;
+    if(delete_counter == 1) {
       var tbodyRef = document.getElementsByTagName("thead")[0];
       var tdNode = document.getElementsByTagName("tr")[0];
 
@@ -104,7 +105,7 @@ function onCheckboxClick(checkbox) {
 
       tbodyRef.appendChild(tdNode);
     }
-    delete_counter++
+    
 
   } else {
     rowSelect.style.backgroundColor = "#fff";
@@ -133,16 +134,18 @@ function deleteRow(rowObject) {
   
   submitSelectedAwards.style.backgroundColor = "grey";
   submitSelectedAwards.style.borderColor = "grey";
-
-  var tdNode = document.getElementsByTagName("th")[8];
-  var deleteColumn = document.getElementById("delete");
-  tdNode.remove(deleteColumn);
-
-  tdNode = document.getElementsByTagName("th")[8];
-  var editColumn = document.getElementById("edit");
-  tdNode.remove(editColumn);
-  count--;
   alert("Row deleted successfully!");
+  delete_counter--;
+  if(delete_counter == 0) {
+    var tdNode = document.getElementsByTagName("th")[8];
+    var deleteColumn = document.getElementById("delete");
+    tdNode.remove(deleteColumn);
+
+    tdNode = document.getElementsByTagName("th")[8];
+    var editColumn = document.getElementById("edit");
+    tdNode.remove(editColumn);
+  }
+  count--;
 }
 
 function editRow(rowObject) {
