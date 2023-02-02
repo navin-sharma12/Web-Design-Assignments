@@ -21,6 +21,7 @@ function addNewRow() {
   var tbodyRef = document.getElementsByTagName("tbody")[0];
 
   var tdNode = document.createElement("tr");
+
   var trCheckBoxCell = document.createElement("td");
   trCheckBoxCell.innerHTML = '<input id="checkbox" type="checkbox" onclick="onCheckboxClick(this)"/><br /><br /><img src="down.png" width="25px" onclick="onImageClick(this)">';
   var trStudentCell = document.createElement("td");
@@ -52,6 +53,7 @@ function addNewRow() {
   tbodyRef.appendChild(tdNode);
 
   tdNode = document.createElement("tr");
+  tdNode.setAttribute("class", "dropDownTextArea");
   var trAdvisorDetails = document.createElement("td");
   trAdvisorDetails.setAttribute("colspan", "8")
   trAdvisorDetails.innerHTML = 'Advisor:<br /><br />Award Details<br />Summer 1-2014(TA)<br />Budget Number: <br />Tuition Number: <br />Comments:<br /><br /><br />Award Status:<br /><br /><br />'
@@ -63,6 +65,7 @@ function addNewRow() {
 }
 
 var submitSelectedAwards = document.getElementById("button");
+var delete_counter = 0
 
 function onCheckboxClick(checkbox) {
   var rowSelect = checkbox.parentElement.parentElement; //tr
@@ -86,19 +89,22 @@ function onCheckboxClick(checkbox) {
       '<button id="edit" type="button" onclick="editRow(this)">Edit</button>';
     rowSelect.appendChild(editButton);
 
-    // label
-    var tbodyRef = document.getElementsByTagName("thead")[0];
-    var tdNode = document.getElementsByTagName("tr")[0];
+    //label
+    if(delete_counter == 0) {
+      var tbodyRef = document.getElementsByTagName("thead")[0];
+      var tdNode = document.getElementsByTagName("tr")[0];
 
-    var thDelete = document.createElement("th");
-    thDelete.innerHTML = '<label id="delete" display="block">DELETE</label>';
-    var thEdit = document.createElement("th");
-    thEdit.innerHTML = '<label id="edit" display="block">EDIT</label>';
+      var thDelete = document.createElement("th");
+      thDelete.innerHTML = '<label id="delete" display="block">DELETE</label>';
+      var thEdit = document.createElement("th");
+      thEdit.innerHTML = '<label id="edit" display="block">EDIT</label>';
 
-    tdNode.appendChild(thDelete);
-    tdNode.appendChild(thEdit);
+      tdNode.appendChild(thDelete);
+      tdNode.appendChild(thEdit);
 
-    tbodyRef.appendChild(tdNode);
+      tbodyRef.appendChild(tdNode);
+    }
+    delete_counter++
 
   } else {
     rowSelect.style.backgroundColor = "#fff";
@@ -106,17 +112,16 @@ function onCheckboxClick(checkbox) {
     rowSelect.deleteCell(8);
     submitSelectedAwards.style.backgroundColor = "grey";
     submitSelectedAwards.style.borderColor = "grey";
-
-    var tbodyRef = document.getElementsByTagName("thead")[0];
-    var tdNode = document.getElementsByTagName("th")[0];
+    delete_counter--
+    if(delete_counter == 0) {
+      tdNode = document.getElementsByTagName("th")[8];
     var deleteColumn = document.getElementById("delete");
-    // deleteColumn.innerHTML = '<label id="delete" display="none"></label>';
-    var editColumn = document.getElementById("edit");
-    // editColumn.innerHTML = '<label id="edit" display="none"></label>'
-    tdNode.removeChild(deleteColumn);
-    tdNode.removeChild(editColumn);
+    tdNode.remove(deleteColumn);
 
-    tbodyRef.removeChild(tdNode);
+    tdNode = document.getElementsByTagName("th")[8];
+    var editColumn = document.getElementById("edit");
+    tdNode.remove(editColumn);
+    }
   }
 }
 
@@ -125,36 +130,32 @@ function deleteRow(rowObject) {
 
   document.getElementById("myTable").deleteRow(tr.rowIndex + 1);
   document.getElementById("myTable").deleteRow(tr.rowIndex);
-  alert("Row deleted successfully!");
+  
   submitSelectedAwards.style.backgroundColor = "grey";
   submitSelectedAwards.style.borderColor = "grey";
+
+  var tdNode = document.getElementsByTagName("th")[8];
+  var deleteColumn = document.getElementById("delete");
+  tdNode.remove(deleteColumn);
+
+  tdNode = document.getElementsByTagName("th")[8];
+  var editColumn = document.getElementById("edit");
+  tdNode.remove(editColumn);
   count--;
+  alert("Row deleted successfully!");
 }
 
 function editRow(rowObject) {
-
+  prompt("");
 }
 
 function onImageClick(rowObject) {
-  // var table = document.getElementById("myTable");
-  // var tag = table.getElementsByTagName("td")
-  // tag.getName("dropDownTextArea").innerHTML = '<display= "none">'
-
-  document.getElementsByClassName("dropDownTextArea").innerHTML = '<visibility="hidden">';
-
-  // if(document.getElementsByClassName("dropDownTextArea").innerHTML = '<display= "none">' ){
-  //   document.getElementsByClassName("dropDownTextArea").innerHTML = '<display= "">';
-  // }else{
-  //   document.getElementsByClassName("dropDownTextArea").innerHTML = '<display= "none">';
-  // }
-  // var tr = rowObject.parentElement.parentElement;
-  // flag = 0;
-  // if(flag == 0) {
-  //   row = rowIndex+1
-  //   document.getElementById("myTable").row[rowIndex+1].style.display = "none"
-  //   flag = 1
-  // } else {
-  //   document.getElementById("myTable").onImageClick(tr.rowIndex+1)
-  //   flag = 0
-  // }
+  var tr = rowObject.parentElement.parentElement;
+  tr = tr.rowIndex+1
+  var tdNode = document.getElementsByTagName("tr")[tr];
+  if (tdNode.style.display === "none") {
+    tdNode.style.display = "";
+  } else {
+    tdNode.style.display = "none";
+  }
 }
