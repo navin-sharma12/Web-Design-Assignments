@@ -1,78 +1,561 @@
 <!doctype html>
 <html lang="en">
- <head>
-  <title>Feedback</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
- </head>
- <body>
- <div id="container">
-	 
-	 <main>
-	 <h2>Feeback</h2>
-	 <h3>Love something? Hate something? Let us know!</h3>
-		 Note : Fields marked with an asterisk(*) are mandatory
-		 <br><br>
-		 <form method="post" name="formData" novalidate>
-			<label>Title*:</label>
-			<input type="radio" name="title" id="miss" value="miss" required="required"/>Miss
-			<input type="radio" name="title" id="mr" value="mr" required="required"/>Mr.
-			<input type="radio" name="title" id="mrs" value="mrs" required="required"/>Mrs.
+
+<head>
+	<title>Feedback</title>
+	<style>
+		label {
+			float: left;
+			width: 150px;
+		}
+
+		#container {
+			width: 700px;
+			margin: auto;
+			background-color: beige;
+		}
+
+		main {
+			padding: 50px;
+		}
+
+		input,
+		option {
+			padding: 3px 20px;
+		}
+
+		table {
+			margin: 24px auto;
+			border: 1px solid beige;
+			border-collapse: collapse;
+			width: 82%;
+			border-radius: 8px;
+			box-shadow: 0px 4px 30px 0px rgb(0 0 0 / 5%);
+		}
+
+		td {
+			background-color: beige;
+			font-size: 16px;
+			text-align: center;
+			border: 2px solid #000;
+			padding: 20px;
+			color: #000;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="container">
+
+		<main>
+			<h2>Feeback</h2>
+			<h3>Love something? Hate something? Let us know!</h3>
+			Note : Fields marked with an asterisk(*) are mandatory
 			<br><br>
-			<label for="firstName">First Name*:</label>
-			<input type="text" name="firstName" id="firstName" placeholder="First Name" />	
-			<br><br>
+			<form method="post" id="myForm" >
+				<label>Title*:</label>
+				<input type="radio" name="title" id="miss" value="miss" required />Miss
+				<input type="radio" name="title" id="mr" value="mr" required/>Mr.
+				<input type="radio" name="title" id="mrs" value="mrs" required/>Mrs.
+				<br><br>
+
+				<label for="firstName">First Name*:</label>
+				<input type="text" name="firstName" id="firstName" placeholder="First Name" required="required">
+				<br><br>
+
+				<div id="error_firstName" style="display:none;color:red">
+					Please Enter Valid First Name.
+					<br><br>
+				</div>
+
+				<label for="lastName">Last Name*:</label>
+				<input type="text" name="lastName" id="lastName" placeholder="Last Name" required="required"/>
+				<br><br>
+
+				<div id="error_lastName" style="display:none;color:red">
+					Please Enter Valid Last Name.
+					<br><br>
+				</div>
+
+				<label for="emailId">Email Id*:</label>
+				<input type="text" name="emailId" id="emailId" placeholder="yourname@domain.com" required="required">
+				<br><br>
+
+				<div id="error_emailId" style="display:none;color:red">
+					Please Enter Valid Email Address.
+					<br><br>
+				</div>
+
+
+				<label for="phoneNumber">Phone Number*:</label>
+				<input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" required="required"/>
+				<br><br>
+
+				<div id="error_phoneNumber" style="display:none;color:red">
+					Please Enter Valid Phone Number.
+					<br><br>
+				</div>
+
+				<label for="streetAddress1">Street Address 1*:</label>
+				<input type="text" name="streetAddress1" id="streetAddress1" placeholder="address" required="required"/>
+				<br><br>
+
+				<div id="error_streetAddress1" style="display:none;color:red">
+					Please Enter Valid Street Address.
+					<br><br>
+				</div>
+
+				<label for="streetAddress2">Street Address 2:</label>
+				<input type="text" name="streetAddress2" id="streetAddress2" placeholder="address"/>
+				<br><br>
+
+				<label for="country">Country*:</label>
+				<input type="text" name="country" id="country" placeholder="country" required="required" />
+				<br><br>
+
+				<div id="error_country" style="display:none;color:red">
+					Please Enter Valid Country.
+					<br><br>
+				</div>
+
+				<label for="state">State*:</label>
+				<input type="text" name="state" id="state" placeholder="state" required="required"/>
+				<br><br>
+
+				<div id="error_state" style="display:none;color:red">
+					Please Enter Valid State.
+					<br><br>
+				</div>
+
+				<label for="city">City*:</label>
+				<input type="text" name="city" id="city" placeholder="city" required="required"/>
+				<br><br>
+
+				<div id="error_city" style="display:none;color:red">
+					Please Enter Valid City.
+					<br><br>
+				</div>
+
+				<label for="zipCode">ZipCode*:</label>
+				<input type="text" name="zipCode" id="zipCode" placeholder="xxxxxx" required="required"/>
+				<br><br>
+
+				<div id="error_zipCode" style="display:none;color:red">
+					Please Enter Valid Zip Code.
+					<br><br>
+				</div>
+
+
+				<label for="cars">Choose a Car*:</label>
+				<select id="cars" name="cars" onchange="populate(this.id, 'quantity');" required="required">
+					<option name="cars" value="">Choose a Car</option>
+					<option name="cars" value="Merceders">Merceders</option>  
+					<option name="cars" value="BMW">BMW</option>  
+					<option name="cars" value="Jaguar">Jaguar</option>  
+					<option name="cars" value="Lamborghini">Lamborghini</option>  
+					<option name="cars" value="Ferrari">Ferrari</option>
+				</select>
+				<br>
+				<br>
+
+				<div id="quantity">
+				</div>
+
+				<br>
+
+				<div id="error_cars" style="display:none;color:red">
+					Please select a car.
+					<br><br>
+				</div>
+
+				<label for="hear">How did you hear*:</label>
+				<input type='checkbox' name="source" value="facebook" onchange="multiplechecks()" /> Facebook
+				<input type='checkbox' name="source" value="google" onchange="multiplechecks()"/> Google
+				<input type='checkbox' name="source" value="yelp" onchange="multiplechecks()"/> Yelp
+				<br><br>
+
+				<div id="error_check" style="display:none;color:red">
+					Please Select Atleast One Checkbox.
+					<br><br>
+				</div>
+
+				<label for="comments">Comments*:</label>
+				<textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25" required="required"></textarea>
+				<br><br>
+
+				<div id="error_comments" style="display:none;color:red">
+					Please enter a valid comment.
+					<br><br>
+				</div>
+
+				<input type="Submit" value="submit">
+				<input type="Reset">
+				<br><br>
+			</form>
+		</main>
+
+
+	</div>
+	<h1 style="text-align:center;">Displaying Feedback Values of Form</h1>
+	<table border="3" id="myTable">
+		<tr>
+			<td>Title </td>
+			<td> First Name</td>
+			<td> Last Name</td>
+			<td> Email</td>
+			<td> Phone Number </td>
+			<td> Street Address 1</td>
+			<td> Street Address 2</td>
+			<td> Country</td>
+			<td> City </td>
+			<td> State </td>
+			<td> Zip code </td>
+			<td>Car</td>
+			<td> How did you hear</td>
+			<td> Comments </td>
+
+
+		</tr>
+
+	</table>
+
+	<script>
+		var form = document.getElementById("myForm");
+		form.addEventListener("submit", submitted)
+
+		var validFirstName = false;
+		var validLastName = false;
+		var validEmail = false;
+		var validPhone = false;
+		var validStreetAddress1 = false;
+		var validCountry = false;
+		var valState = false;
+		var validCity = false;
+		var validZipCode = false;
+		var validComments = false;
+		var validCars = false;
+
+
+		// Regex checks Variables
+		var regExFirstName = /[a-zA-Z].$/;
+		var regExLastName = /[a-zA-Z].$/;
+		var regExEmail = /\w+\.\w+\@northeastern\.edu/;
+		var regExPhone = /\d{3}\-\d{3}\-\d{4}/;
+		var regExZipCode = /\d{5,6}/;
+
+		var firstName = document.getElementById("firstName");
+		firstName.addEventListener("input", validate);
+
+		var lastName = document.getElementById("lastName");
+		lastName.addEventListener("input", validate);
+
+		var emailId = document.getElementById("emailId");
+		emailId.addEventListener("input", validate);
+
+		var phoneNumber = document.getElementById("phoneNumber");
+		phoneNumber.addEventListener("input", validate);
+
+		var streetAddress1 = document.getElementById("streetAddress1");
+		streetAddress1.addEventListener("input", validate)
+
+		var country = document.getElementById("country");
+		country.addEventListener("input", validate)
+
+		var state = document.getElementById("state");
+		state.addEventListener("input", validate)
+
+		var city = document.getElementById("city");
+		city.addEventListener("input", validate)
+
+		var zipCode = document.getElementById("zipCode");
+		zipCode.addEventListener("input", validate);
+
+		var comments = document.getElementById("comments");
+		comments.addEventListener("input", validate);
+
+		var cars = document.getElementById("cars");
+		cars.addEventListener("input", validate);
+
+
+		// Function for validation
+		function validate(e) {
+			var value = e.target.value;
+			var type = this.id;
+			var em = "error_" + type
+
+			switch (type) {
+				case "firstName":
+					if (!value.trim().match(regExFirstName)) {
+						document.getElementById(em).style.display = "block";
+						validFirstName = false;
+					}
+					else {
+						document.getElementById(em).style.display = "none";
+						validFirstName = true;
+					}
+					break;
+
+				case "lastName":
+					if (!value.trim().match(regExLastName)) {
+						document.getElementById(em).style.display = "block";
+						validLastName = false;
+					}
+					else {
+						document.getElementById(em).style.display = "none";
+						validLastName = true;
+					}
+					break;
+
+				case "emailId":
+					if (!value.trim().match(regExEmail)) {
+						document.getElementById(em).style.display = "block";
+						validEmail = false;
+					}
+					else {
+						document.getElementById(em).style.display = "none";
+						validEmail = true;
+					}
+					break;
+
+				case "phoneNumber":
+					if (!value.trim().match(regExPhone)) {
+						document.getElementById(em).style.display = "block";
+						validPhone = false;
+					}
+					else {
+						document.getElementById(em).style.display = "none";
+						validPhone = true;
+					}
+					break;
+
+				case "streetAddress1":
+					if (value == "") {
+						document.getElementById(em).style.display = "block";
+						validStreetAddress1 = false;
+					}
+					else {
+						document.getElementById(em).style.display = "none";
+						validStreetAddress1 = true;
+					}
+					break;
+
+				case "country":
+					if (value == "") {
+						document.getElementById(em).style.display = "block";
+						validCountry = false;
+					}
+					else {
+						document.getElementById(em).style.display = "none";
+						validCountry = true;
+					}
+					break;
+
+				case "state":
+					if (value == "") {
+						document.getElementById(em).style.display = "block";
+						validState = false;
+					}
+					else {
+						document.getElementById(em).style.display = "none";
+						validState = true;
+					}
+					break;
+
+				case "city":
+					if (value == "") {
+						document.getElementById(em).style.display = "block";
+						validCity = false;
+					}
+					else {
+						document.getElementById(em).style.display = "none";
+						validCity = true;
+					}
+					break;
+
+				case "zipCode":
+					if (!value.trim().match(regExZipCode)) {
+						document.getElementById(em).style.display = "block";
+						validZipCode = false;
+					}
+					else {
+						document.getElementById(em).style.display = "none";
+						validZipCode = true;
+					}
+					break;
+				case "comments":
+					if (value == "") {
+						document.getElementById(em).style.display = "block";
+						validComments = false;
+					}
+					else {
+						document.getElementById(em).style.display = "none";
+						validComments = true;
+					}
+					break;
+				case "cars":
+					if (value == "") {
+						document.getElementById(em).style.display = "block";
+						validCars = false;
+					}
+					else {
+						document.getElementById(em).style.display = "none";
+						validCars = true;
+					}
+					break;
+			}
+		}
+
+		// Function for multiple checkbox value
+
+		function populate(cars, quantity) {
+			var mod = document.getElementById(cars);
+			var qua = document.getElementById(quantity);
+			qua.innerHTML = "";
+			if (mod.value == "Merceders") {
+				var optionArray = ["Merceders"];
+			} else if (mod.value == "BMW") {
+				var optionArray = ["BMW"];
+			} else if (mod.value == "Jaguar") {
+				var optionArray = ["Jaguar"];
+			} else if (mod.value == "Lamborghini") {
+				var optionArray = ["Lamborghini"];
+			} else if (mod.value == "Ferrari") {
+				var optionArray = ["Ferrari"];
+			}
+
+			for (var option in optionArray) {
+				if (optionArray.hasOwnProperty(option)) {
+					var pair = optionArray[option];
+					var checkbox = document.createElement("input");
+					checkbox.type = "checkbox";
+					checkbox.name = pair;
+					checkbox.value = pair;
+					checkbox.id = optionArray[option]
+
+					checkbox.addEventListener('click', function (event) {
+
+						// Adding textbox when checked 
+
+						var ele = document.getElementById(event.target.id);
+						if (ele.checked) {
+							let textBox = document.createElement("input");
+							textBox.setAttribute("type", "text");
+							textBox.setAttribute("id","mytext");
+							qua.appendChild(textBox);
+						} else {
+							document.getElementById("mytext").remove();
+						}
+
+					});
+
+					qua.appendChild(checkbox);
+
+					var label = document.createElement('label')
+					label.htmlFor = pair;
+					label.appendChild(document.createTextNode(pair));
+
+					qua.appendChild(label);
+					qua.appendChild(document.createElement("br"));
+				}
+			}
+		}
+
+
+		function multiplechecks() {
+			var check = document.getElementsByName("source")
 			
+			var count = true;
+			for (i = 0; i < check.length; i++) {
+				if (check[i].checked) {
+					count = false;
+				}
+				if (count) {
+					document.getElementById("error_check").style.display = "inline"
+				}
+				else {
+					document.getElementById("error_check").style.display = "none"
+				}
+			}
 
-			<label for="lastName">Last Name*:</label>
-			<input type="text" name="lastName" id="lastName" placeholder="Last Name" />
-			<br><br>
-			
+		}
+		// Function for submitted Button
 
-			<label for="emailId">Email Id*:</label>
-			<input type="text" name="emailId" id="emailId" placeholder="yourname@domain.com" />
-			<br><br>
-			
+		function submitted(e) {
+			e.preventDefault();
+			if (validFirstName && validLastName && validEmail && validPhone && validStreetAddress1 && validCountry && validState && validCity && validZipCode && validComments) {
+				alert("Data is saved succesfully")
+				var tb1 = document.getElementById("myTable")
+				var row = tb1.insertRow();
 
-			<label for="phoneNumber">Phone Number*:</label>
-			<input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" />
-			<br><br>
+				// Displaying values of form ---- > table
+				var cell1 = row.insertCell();
+				x = document.getElementsByName('title')
 
-			<label for="streetAddress1">Street Address 1*:</label>
-			<input type="text" name="streetAddress1" id="streetAddress1" placeholder="address" />
-			<br><br>
+				for (i = 0; i < x.length; i++) {
+					if (x[i].checked)
+						y = x[i].value;
 
-			<label for="streetAddress2">Street Address 2:</label>
-			<input type="text" name="streetAddress2" id="streetAddress2" placeholder="address" />
-			<br><br>
+				}
+				cell1.innerHTML = y;
 
-			<label for="city">City*:</label>
-			<input type="text" name="city" id="city" placeholder="city" />
-			<br><br>
+				var cell2 = row.insertCell();
+				cell2.innerHTML = document.getElementById("firstName").value;
 
-			<label for="state">State*:</label>
-			<input type="text" name="state" id="state" placeholder="state" />
-			<br><br>
-			
-            <label for="zipcode">ZipCode*:</label>
-			<input type="text" name="zipcode" id="zipcode" placeholder="xxxxxx" />
-			<br><br>
-             
-            <label for="zipcode">How did you hear*:</label>
-			<input type='checkbox' name="source" value="facebook" /> Facebook
-            <input type='checkbox' name="source" value="google" /> Google
-            <input type='checkbox' name="source" value="yelp" /> Yelp 
-			<br><br> 
-             
-			<label for="comments">Comments*:</label>
-			<textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25"></textarea>
-			<br><br>
-			
-			<button type="button" onclick="onSubmitFormClick(this)">Submit</button>
-			<input type="Reset" onclick="onFormResetClick()">
-			<br><br>
-		 </form>
-	 </main>
- </div>
-	<script src="script.js"></script>
- </body>
+				var cell3 = row.insertCell();
+				cell3.innerHTML = document.getElementById("lastName").value;
+
+				var cell4 = row.insertCell();
+				cell4.innerHTML = document.getElementById("emailId").value;
+
+				var cell5 = row.insertCell();
+				cell5.innerHTML = document.getElementById("phoneNumber").value;
+
+				var cell6 = row.insertCell();
+				cell6.innerHTML = document.getElementById("streetAddress1").value;
+
+				var cell7 = row.insertCell();
+				cell7.innerHTML = document.getElementById("streetAddress2").value;
+
+				var cell8 = row.insertCell();
+				cell8.innerHTML = document.getElementById("country").value;
+
+				var cell9 = row.insertCell();
+				cell9.innerHTML = document.getElementById("city").value;
+
+				var cell10 = row.insertCell();
+				cell10.innerHTML = document.getElementById("state").value;
+
+				var cell11 = row.insertCell();
+				cell11.innerHTML = document.getElementById("zipCode").value;
+
+				var cell12 = row.insertCell();
+				cell12.innerHTML = document.getElementById("cars").value
+
+				var cell13 = row.insertCell();
+				var checkboxes = document.getElementsByName('source');
+				var values = "";
+				for (var i = 0; i < checkboxes.length; i++) {
+					if (checkboxes[i].checked) {
+						values += checkboxes[i].value + " " + " ";
+					}
+				}
+				cell13.innerHTML = values
+
+				var cell14 = row.insertCell();
+				cell14.innerHTML = document.getElementById("comments").value;
+
+				document.getElementById("myForm").reset();
+				var removecheck = document.getElementById("")
+			}
+			else {
+				alert("Please enter proper data");
+			}
+		}
+
+
+	</script>
+
+
+</body>
+
 </html>
