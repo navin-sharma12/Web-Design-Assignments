@@ -71,6 +71,11 @@
     background: transparent;
 }
 
-.container #error_emailid, #error_username, #error_password{
+.container #error_emailid, #error_username, #error_password, #error_input1, #error_input2{
     margin-left: 10%;
+}
+
+.container .calculator {
+    margin-left: 5%;
+    width: 40%;
 }

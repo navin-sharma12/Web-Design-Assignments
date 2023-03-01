@@ -1,7 +1,9 @@
-$(document).ready(function () {
+$(document).ready(() => {
     $("#error_emailid").hide();
     $("#error_username").hide();
     $("#error_password").hide();
+    $("#error_input1").hide();
+    $("#error_input2").hide();
 
     let usernameError = true;
     let emailidError = true;
@@ -62,4 +64,58 @@ $(document).ready(function () {
             return false;
         }
     })
+
+    $("input[id='output']").attr("readonly", true);
+
+    let input1Error = true;
+    let input2Error = true;
+    
+    $("#input1").keyup(() => {
+        let input1 = parseFloat($("#input1").val());
+        let regexCalculator = /^[0-9]*\.?[0-9]?.$/;
+        if(input1.length == 0 | regexCalculator.test(input1) == false) {
+            input1Error = true;
+            $("#error_input1").show();
+            return false;
+        } else {
+            input1Error = false;
+            $("#error_input1").hide();
+        }
+
+        $("#input2").keyup(() => {
+            let input2 = parseFloat($("#input2").val());
+            regexCalculator = /^[0-9]*\.?[0-9]?.$/;
+            if(input2.length == 0 | regexCalculator.test(input2) == false) {
+                input2Error = true;
+                $("#error_input2").show();
+                return false;
+            } else {
+                input2Error = false;
+                $("#error_input2").hide();
+            }
+
+            $("button").click((event) => {
+                const buttonId = event.target.id;
+                switch(buttonId) {
+                    case "buttonAdd":
+                        $("input#output").val(input1 + input2);
+                        break;
+                    case "buttonSubtract":
+                        $("input#output").val(input1 - input2);
+                        break;
+                    case "buttonMultiply":
+                        $("input#output").val(input1 * input2);
+                        break;
+                    case "buttonDivide":
+                        $("input#output").val(input1 / input2);
+                        break;
+                }
+            })
+        })
+    })
+
+    
+
+    
+    
 })

@@ -5,8 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="container">
+        <h2>Calculator</h2>
+        <input id="input1" type="text" placeholder="Input 1"><br>
+        <div id="error_input1" style="display:none;color:red">
+            Please Enter Valid Number.
+            <br><br>
+        </div>
+        <input id="input2" type="text" placeholder="Input 2"><br>
+        <div id="error_input2" style="display:none;color:red">
+            Please Enter Valid Number.
+            <br><br>
+        </div>
+        <input id="output" type="text" placeholder="Output"><br><br>
+        <button type="submit" id="buttonAdd" class="calculator">Add</button>
+        <button type="submit" id="buttonSubtract" class="calculator">Subtract</button><br>
+        <button type="submit" id="buttonMultiply" class="calculator">Multiply</button>
+        <button type="submit" id="buttonDivide" class="calculator">Divide</button>
+    </div>
+    <script src="jquery.js"></script>
 </body>
 </html>
