@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <title>Calculator login</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,9 +14,28 @@
         <form id="myForm">
             <h2>Login</h2>
             <input type="text" id="emailid" placeholder="Email ID"><br>
+            <div id="error_emailid" style="display:none;color:red">
+                Please Enter Valid Email Address.
+                <br><br>
+            </div>
             <input type="text" id="username" placeholder="Username"><br>
+            <div id="error_username" style="display:none;color:red">
+                Please Enter Valid Username.
+                <br><br>
+            </div>
             <input type="password" id="password" placeholder="Password"><br>
-            <button type="submit">
+            <div id="error_password" style="display:none;color:red">
+                Please Enter Valid Password.
+                <ul>
+                    <li>Minimum 8 characters</li>
+                    <li>Atleast 1 special character @, #, $, %, &, *, (, ), !, ^</li>
+                    <li>Atleast 1 UPPERCASE character</li>
+                    <li>Atlaest 1 smallcase character</li>
+                    <li>Atleast 1 numerical</li>
+                </ul>
+                <br><br>
+            </div>
+            <button type="submit" id="submitButton">
                 <a href="calculator.html">
                     Login
                 </a>
