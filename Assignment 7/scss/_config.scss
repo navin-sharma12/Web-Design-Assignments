@@ -1,0 +1,30 @@
+$primary-color: #4e4343;
+$bg-color: radial-gradient(#fff, #afd4f7);
+$font-stack: "Poppins", arial, sans-serif;
+$btn-color: #63a8e0;
+
+@function set-text-color($color) {
+  @if (lightness($color) > 70) {
+    @return #63a8e0;
+  }
+
+  @else {
+    @return #fff;
+  }
+}
+
+@mixin set-bg($color) {
+  background-color: $color;
+  color: set-text-color($primary-color);
+}
+
+$spaceamounts: (
+  1,
+  2
+);
+
+@each $space in $spaceamounts {
+  .my-#{$space} {
+    margin: #{space} rem 0;
+  }
+}
