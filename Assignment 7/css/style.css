@@ -13,20 +13,25 @@
   margin: space rem 0;
 }
 
-.btn-primary {
+.btn-primary1, .btn-primary {
   display: inline-block;
   border-radius: 5px;
   padding: 8px 20px;
   background: #63a8e0;
   margin: 3px;
 }
-.btn-primary:hover {
+.btn-primary1:hover, .btn-primary:hover {
   transform: scale(1);
 }
 
 .btn-primary {
   background-color: #63a8e0;
   color: #fff;
+}
+
+.btn-primary1 {
+  margin-left: 36%;
+  margin-bottom: 5%;
 }
 
 @media (max-width: 768px) {
@@ -143,33 +148,47 @@ body {
 }
 
 .form {
-  width: 340px;
-  height: 440px;
-  border-radius: 9px;
-  padding: 20px 30px;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, sans-serif;
-}
-
-.form-container {
-  background: #fff;
-  width: 300px;
-  height: 400px;
   position: relative;
+  margin-top: 5%;
+  margin-left: 35%;
+  margin-right: auto;
+  width: 30%;
+  margin-bottom: auto;
+  border-radius: 20px;
+  padding: 2px;
+  box-sizing: border-box;
+  background: radial-gradient(#fff, #afd4f7);
+  box-shadow: 14px 14px 20px #ffffff, -14px -14px 20px white;
+}
+.form h2 {
   text-align: center;
-  padding: 20px 0;
-  margin: auto;
-  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10%;
+  margin-top: 30px;
+  color: #000000;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
 }
-
-.contact-page {
-  padding: 50px 0px;
-  background: radial-gradient(#fff, #f9d5e5);
-  display: flex;
-  justify-content: center;
+.form a {
+  text-decoration: none;
+  color: black;
 }
-.contact-page p {
-  text-align: left;
+.form input {
+  width: 80%;
+  font-size: 15px;
+  color: #000000;
+  margin-bottom: 30px;
+  margin-top: 5px;
+  margin-left: 10%;
+  margin-right: 10%;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  background: transparent;
+}
+.form ::placeholder {
+  color: black;
+  font-size: medium;
 }
 
 .logo {

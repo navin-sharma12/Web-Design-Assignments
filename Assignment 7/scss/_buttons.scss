@@ -14,3 +14,9 @@
   @extend %btn;
   @include set-bg($btn-color);
 }
+
+.btn-primary1 {
+  @extend %btn;
+  margin-left: 36%;
+  margin-bottom: 5%;
+}
