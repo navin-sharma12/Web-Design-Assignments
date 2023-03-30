@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import LoginPage from './Login/LoginPage';
 import MainPage from './Main/MainPage';
 import About from './About/About';
-import Home from './Home/Home';
+import Home from './Main/MainPage';
 import Contact from './Contact/Contact';
 import Jobs from './Jobs/Jobs';
 

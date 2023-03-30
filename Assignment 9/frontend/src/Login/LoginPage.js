@@ -5,7 +5,7 @@ import "../Login/LoginPage.css";
 export default function LoginPage({...props}){
     const navigate = useNavigate();
     const handleSignIn = () => {
-        // props.handleLogin();
+        props.handleLogin();
         navigate('/main')
     }
     return(

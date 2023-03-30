@@ -1,0 +1,154 @@
+body {
+    margin: 0%;
+}
+.column_left {
+    float: left;
+    width: 20%;
+    margin-right: 20px;
+    padding: 0 30px;
+    height: 100vh;
+    background-color: rgb(128, 188, 241);
+}
+
+.column_left a {
+    cursor: pointer;
+    color: white;
+    padding-left: 3%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 28px;
+}
+
+li {
+    list-style: none;
+}
+
+.home {
+    padding-top: 20%;
+}
+  
+.home img {
+    margin-left: -25px;
+    width: 30px;
+    height: 30px;
+}
+  
+.about img {
+    margin-left: -25px;
+    width: 30px;
+    height: 30px;
+}
+  
+.projects img {
+    margin-left: -25px;
+    width: 30px;
+    height: 30px;
+}
+  
+.education img {
+    margin-left: -25px;
+    width: 30px;
+    height: 35px;
+}
+  
+.contact img {
+    margin-left: -25px;
+    width: 30px;
+    height: 30px;
+}
+  
+.column_left a:hover {
+    color: black;
+    font-weight: bolder;
+}
+  
+.column_left img {
+    background-color: none;
+    float: left;
+}
+  
+.column_left p {
+    cursor: pointer;
+    color: white;
+    text-align: left;
+    margin-top: 50%;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 34px;
+}
+
+.float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+}
+  
+.float-child {
+    width: 30%;
+    float: left;
+    padding: 20px;
+    border: 2px solid rgb(0, 0, 0);
+}
+  
+.float-child img {
+    float: left;
+    width: 30px;
+    height: auto;
+}
+  
+.float-child label {
+    color: black;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    margin-left: 5px;
+}
+  
+.float-child2 {
+    width: 30%;
+    float: left;
+    margin-left: 20px;
+    padding: 20px;
+    border: 2px solid rgb(0, 0, 0);
+}
+  
+.float-child2 img {
+    float: left;
+    width: 30px;
+    height: auto;
+}
+  
+.float-child2 label {
+    color: black;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    margin-left: 5px;
+}
+  
+.float-child3 {
+    width: 30%;
+    float: left;
+    margin-left: 1px;
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid rgb(0, 0, 0);
+}
+  
+.float-child3 img {
+    float: left;
+    width: 30px;
+    height: auto;
+}
+  
+.float-child3 label {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    margin-left: 5px;
+}
+  
+.float-child4 iframe {
+    margin-top: 2%;
+    width: 960px;
+    height: 450px;
+}
