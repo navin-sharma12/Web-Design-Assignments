@@ -1,6 +1,13 @@
 import "../styles.css";
 import React from 'react';
 import {Link} from 'react-router-dom';
+import home from "../images/home.svg";
+import about from "../images/human.svg";
+import jobs from "../images/education icon.png";
+import contact from "../images/contact.svg";
+import navin from "../images/navin.png";
+import linkedin from "../images/linkedIn.jpg";
+import instagram from "../images/instagram.jpg";
 
 export default function MainPage() {
     return (
@@ -10,38 +17,32 @@ export default function MainPage() {
                     <p>NAVIN SHARMA</p>
                     <li class="home">
                         <Link to='/main'>
-                            <img src="images/home.svg" alt="icon"/>
+                            <img src={home} alt="icon"/>
                             Home
                         </Link>
                     </li><br/>
                     <li class="about">
                         <Link to='/about'>
-                            <img src="images/human.svg" alt="icon"/>
+                            <img src={about} alt="icon"/>
                             About
                         </Link>
                     </li><br/>
                     <li class="education">
-                        <Link to='/education'>
-                            <img src="images/education icon.png" alt="icon"/>
-                            Education
-                        </Link>
-                    </li><br/>
-                    <li class="projects">
-                        <Link to='/certificates'>
-                            <img src="images/project.png" alt="icon"/>
-                            Certificates
+                        <Link to='/jobs'>
+                            <img src={jobs} alt="icon"/>
+                            Jobs
                         </Link>
                     </li><br/>
                     <li class="contact">
                         <Link to='/contact'>
-                            <img src="images/contact.svg" alt="icon"/>
+                            <img src={contact} alt="icon"/>
                             Contact
                         </Link>
                     </li>
                 </nav>
             </div>
             <div class="column_right">
-                <img id="img2" src="images/navin.png" alt="image"/>
+                <img id="img2" src={navin} alt="image"/>
                 <h3>
                     Hello, I'm Navin Sharma
                 </h3>
@@ -57,10 +58,10 @@ export default function MainPage() {
                     I am a Software Engineer based in USA, over 3 years of professional experience.
                 </p>
                 <a href="https://www.linkedin.com/in/navin-sharma">
-                    <img class="column_right_img1" src="images/linkedIn.jpg" alt="icon"/>
+                    <img class="column_right_img1" src={linkedin} alt="icon"/>
                 </a>
                 <a href="https://www.instagram.com/">
-                    <img class="column_right_img2" src="images/instagram.jpg" alt="icon"/>
+                    <img class="column_right_img2" src={instagram} alt="icon"/>
                 </a>
             </div>
         </div>

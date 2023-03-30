@@ -20,7 +20,7 @@ function App() {
         <Route path='/' element={<LoginPage handleLogin={handleLogin}/>}></Route>
         { isLoggedIn &&
           <>
-          <Route path="/main" element={<Home/>}></Route>
+          <Route path="/" element={<Home/>}></Route>
           <Route path="/about" element={<About/>}></Route>
           <Route path="/contact" element={<Contact/>}></Route>
           <Route path="/jobs" element={<Jobs/>}></Route>
