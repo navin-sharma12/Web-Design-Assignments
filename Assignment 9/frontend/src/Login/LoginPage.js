@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../Login/LoginPage.css";
 
-const LoginPage = () => {
+const LoginPage = ({...props}) => {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -17,9 +17,8 @@ const LoginPage = () => {
             .then((res) => {
             if (res.status === 200) {
                 res.json().then(data => {
-                    console.log(data[0].emailid);
-                if (data[0].emailid === email && data[0].password === password) {
-                    navigate("/main")
+                if (data[0].emailid === email) {
+                    props.handleLogin();
                 } else {
                     alert("User not found");
                 }

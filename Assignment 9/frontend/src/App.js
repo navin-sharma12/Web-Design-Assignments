@@ -4,7 +4,6 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import LoginPage from './Login/LoginPage';
 import MainPage from './Main/MainPage';
 import About from './About/About';
-import Home from './Main/MainPage';
 import Contact from './Contact/Contact';
 import Jobs from './Jobs/Jobs';
 
@@ -20,7 +19,7 @@ function App() {
         <Route path='/' element={<LoginPage handleLogin={handleLogin}/>} exact/>
         { isLoggedIn &&
           <>
-          <Route exact path="/main" element={<Home/>}></Route>
+          <Route exact path="/main" element={<MainPage/>}></Route>
           <Route exact path="/about" element={<About/>}></Route>
           <Route exact path="/contact" element={<Contact/>}></Route>
           <Route exact path="/jobs" element={<Jobs/>}></Route>
