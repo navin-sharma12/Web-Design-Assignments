@@ -31,8 +31,7 @@ export default function Jobs() {
         <div>
             <Navbar/>
             <div className="jobs_container">
-                {
-                jobs.map((job) => (
+                {jobs.map((job) => (
                 <Card
                     key={job.id}
                     header={job.title}
