@@ -13,7 +13,7 @@ body {
 .column_left a {
   cursor: pointer;
   color: white;
-  padding-left: 3%;
+  padding-left: 2%;
   text-align: center;
   text-decoration: none;
   font-size: 28px;
@@ -28,31 +28,31 @@ li {
 }
 
 .home img {
-  margin-left: -25px;
+  margin-left: 5px;
   width: 30px;
   height: 30px;
 }
 
 .about img {
-  margin-left: -25px;
+  margin-left: 5px;
   width: 30px;
   height: 30px;
 }
 
 .projects img {
-  margin-left: -25px;
+  margin-left: 5px;
   width: 30px;
   height: 30px;
 }
 
 .education img {
-  margin-left: -25px;
+  margin-left: 5px;
   width: 30px;
   height: 35px;
 }
 
 .contact img {
-  margin-left: -25px;
+  margin-left: 5px;
   width: 30px;
   height: 30px;
 }

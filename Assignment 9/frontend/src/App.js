@@ -17,13 +17,13 @@ function App() {
     <Router>
       {isLoggedIn && <MainPage/>}
       <Routes>
-        <Route path='/' element={<LoginPage handleLogin={handleLogin}/>}></Route>
+        <Route path='/' element={<LoginPage handleLogin={handleLogin}/>} exact/>
         { isLoggedIn &&
           <>
-          <Route path="/" element={<Home/>}></Route>
-          <Route path="/about" element={<About/>}></Route>
-          <Route path="/contact" element={<Contact/>}></Route>
-          <Route path="/jobs" element={<Jobs/>}></Route>
+          <Route exact path="/main" element={<Home/>}></Route>
+          <Route exact path="/about" element={<About/>}></Route>
+          <Route exact path="/contact" element={<Contact/>}></Route>
+          <Route exact path="/jobs" element={<Jobs/>}></Route>
           </>
         }
       </Routes>

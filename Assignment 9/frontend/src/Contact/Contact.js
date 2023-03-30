@@ -5,6 +5,9 @@ import home from "../images/home.svg";
 import about from "../images/human.svg";
 import jobs from "../images/education icon.png";
 import contact from "../images/contact.svg";
+import phone from "../images/phone.png";
+import email from "../images/email.png";
+import location from "../images/location.png";
 
 export default function MainPage() {
     return (
@@ -46,20 +49,20 @@ export default function MainPage() {
 
                     <div class="float-child">
                         <a href="tel:+1617-961-9878" target="_blank">
-                            <img src="images/phone.png" alt="icon"/>
+                            <img src={phone} alt="icon"/>
                             <label for="icon">Phone: <br/> +1 (617) 961 9878</label>
                         </a>
                     </div>
 
                     <div class="float-child2">
                         <a href="mailto:sharma.navi@northeastern.edu" target="_blank">
-                            <img src="images/email.png" alt="icon"/>
+                            <img src={email} alt="icon"/>
                             <label for="icon">Email: <br/> sharma.navi@northeastern.edu</label>
                         </a>
                     </div>
 
                     <div class="float-child3">
-                        <img src="images/location.png" alt="icon"/>
+                        <img src={location} alt="icon"/>
                         <label for="icon">Location: <br/> 886 Huntington Ave, Boston, MA - 02115</label>
                     </div>
 

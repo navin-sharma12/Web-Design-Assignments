@@ -1,5 +1,3 @@
-import { response } from "express";
-import { request } from "http";
 import * as detailsService from "./../services/service.js";
 
 //to set error message 
