@@ -6,10 +6,12 @@ router.route("/")
     .post(detailsController.post)
     .get(detailsController.getAllDetails);
 
-
 router.route("/:id")
     .get(detailsController.getById)
     .put(detailsController.updatedDetails)
     .delete(detailsController.removeDetails);
+
+router.route("/login")
+    .post(detailsController.authenticateUser);
 
 export default router;

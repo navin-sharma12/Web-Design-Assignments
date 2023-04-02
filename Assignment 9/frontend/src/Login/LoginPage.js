@@ -1,42 +1,43 @@
-import React, {useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
 import "../Login/LoginPage.css";
+import { useNavigate } from 'react-router-dom';
 
-const LoginPage = ({...props}) => {
+const LoginPage = ({ ...props }) => {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const loginUser = (e) => {
+    const [pass, setPassword] = useState("");
+    const loginUser = async (e) => {
         e.preventDefault();
-        fetch(`http://localhost:8080/assignment8/?emailid=${email}&password=${password}`, {
-            method: "GET",
+        fetch("http://localhost:8080/assignment8/login", {
+            method: "POST",
             headers: {
+                Accept: "application/json, text/plain, */*",
                 "Content-Type": "application/json",
             },
-            })
-            .then((res) => {
-            if (res.status === 200) {
-                res.json().then(data => {
-                if (data[0].emailid === email) {
-                    props.handleLogin();
+            body: JSON.stringify({
+                emailid: email,
+                password: pass,
+            }),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data == true) {
+                    props.handleLogin(true);
+                    navigate("/main");
                 } else {
-                    alert("User not found");
+                    alert("Invalid Username or Password");
                 }
-                })
-            } else {
-                alert("Invalid Credentials");
-            }
             })
             .catch((err) => {
-                alert("Invalid email or password");
+                console.log(err);
             });
     };
-    return(
+    return (
         <div class="container">
             <form id="myForm">
                 <h2>Login</h2>
-                <input type="text" id="emailid" placeholder="Email ID" value={email} onChange={(e) => setEmail(e.target.value)}/><br/>
-                <input type="password" id="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/><br/>
+                <input type="text" id="emailid" placeholder="Email ID" value={email} onChange={(e) => setEmail(e.target.value)} /><br />
+                <input type="password" id="password" placeholder="Password" value={pass} onChange={(e) => setPassword(e.target.value)} /><br />
                 <button type="submit" id="submitButton" onClick={loginUser}>Login</button>
             </form>
         </div>

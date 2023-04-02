@@ -15,7 +15,7 @@ export default function MainPage() {
                 </h1>
                 <div class="float-container">
 
-                    <div class="float-child">
+                    <div class="float-child1">
                         <a href="tel:+1617-961-9878" target="_blank">
                             <img src={phone} alt="icon"/>
                             <label for="icon">Phone: <br/> +1 (617) 961 9878</label>

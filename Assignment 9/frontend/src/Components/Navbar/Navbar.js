@@ -5,6 +5,7 @@ import home from "../../images/home.svg";
 import about from "../../images/human.svg";
 import jobs from "../../images/education icon.png";
 import contact from "../../images/contact.svg";
+import Card from "../Cards/Cards";
 
 export default function Navbar () {
     return (

@@ -9,24 +9,38 @@ import Jobs from './Jobs/Jobs';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-  function handleLogin() {
-    setIsLoggedIn(true)
+  function handleLogin(value) {
+    setIsLoggedIn(value)
   }
   return (
     <Router>
-      {isLoggedIn && <MainPage/>}
+      {isLoggedIn == true}
       <Routes>
-        <Route path='/' element={<LoginPage handleLogin={handleLogin}/>} exact/>
-        { isLoggedIn &&
-          <>
-          <Route exact path="/main" element={<MainPage/>}></Route>
-          <Route exact path="/about" element={<About/>}></Route>
-          <Route exact path="/contact" element={<Contact/>}></Route>
-          <Route exact path="/jobs" element={<Jobs/>}></Route>
-          </>
+        <Route exact path='/' element={<LoginPage handleLogin={handleLogin}/>}/>
+        {isLoggedIn == true &&
+        <>
+        <Route exact path="/main" element={<MainPage/>}></Route>
+        <Route exact path="/about" element={<About/>}></Route>
+        <Route exact path="/contact" element={<Contact/>}></Route>
+        <Route exact path="/jobs" element={<Jobs/>}></Route>
+        </>
         }
-      </Routes>
+        </Routes>
     </Router>
+    // <Router>
+    //   {isLoggedIn && <MainPage/>}
+    //   <Routes>
+    //     <Route path='/' element={<LoginPage handleLogin={handleLogin}/>} exact/>
+    //     { isLoggedIn &&
+    //       <>
+    //       <Route exact path="/main" element={<MainPage/>}></Route>
+    //       <Route exact path="/about" element={<About/>}></Route>
+    //       <Route exact path="/contact" element={<Contact/>}></Route>
+    //       <Route exact path="/jobs" element={<Jobs/>}></Route>
+    //       </>
+    //     }
+    //   </Routes>
+    // </Router>
   );
 }
 

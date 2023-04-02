@@ -7,9 +7,9 @@ import instagram from "../images/instagram.jpg";
 export default function MainPage() {
     return (
         <div>
-            <Navbar/>
+            <Navbar />
             <div class="column_right">
-                <img id="img2" src={navin} alt="image"/>
+                <img id="img2" src={navin} alt="image" />
                 <h3>
                     Hello, I'm Navin Sharma
                 </h3>
@@ -25,10 +25,10 @@ export default function MainPage() {
                     I am a Software Engineer based in USA, over 3 years of professional experience.
                 </p>
                 <a href="https://www.linkedin.com/in/navin-sharma">
-                    <img class="column_right_img1" src={linkedin} alt="icon"/>
+                    <img class="column_right_img1" src={linkedin} alt="icon" />
                 </a>
                 <a href="https://www.instagram.com/">
-                    <img class="column_right_img2" src={instagram} alt="icon"/>
+                    <img class="column_right_img2" src={instagram} alt="icon" />
                 </a>
             </div>
         </div>

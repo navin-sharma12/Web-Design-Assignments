@@ -69,3 +69,18 @@ export const removeDetails = async (request, response) => {
         setErrorResponse(error,response);
     }
 }
+
+export const authenticateUser = async (request, response) => {
+    try{
+        const email = request.body.emailid;
+        const password = request.body.password;
+        const details = await detailsService.authenticate(email, password);
+        if(details == true){
+            setSuccessResponse(details,response);
+        } else {
+            return response.status(400).json({ message: "Passwords do not match." });
+        }
+    }catch(error){
+        setErrorResponse(error,response);
+    }
+}
