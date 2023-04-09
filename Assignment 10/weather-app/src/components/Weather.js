@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import DailyWeather from './DailyWeather';
 import { TextField } from '@material-ui/core'
 import axios from 'axios';
 import moment from 'moment';
@@ -44,15 +42,15 @@ class Weather extends Component {
         })
     }
 
-    onClickHandler = (obj) => {
-        let newDate = new Date();
-        const weekday = obj.dt * 1000;
-        newDate.setTime(weekday);
-        const date = obj.dt_txt.split(" ")[0];
+    onClickHandler = (obj_value) => {
+        let updatedDate = new Date();
+        const weekday = obj_value.dt * 1000;
+        updatedDate.setTime(weekday);
+        const date = obj_value.dt_txt.split(" ")[0];
         const data = this.state.weatherData?.filter(data => data.dt_txt.includes(date));
         localStorage.setItem('dailyWeather', JSON.stringify(data));
-        localStorage.setItem('currentDailyWeather', JSON.stringify(obj));
-        this.props.history.push(`dailyWeather/${moment(newDate).format('dddd')}`);
+        localStorage.setItem('currentDailyWeather', JSON.stringify(obj_value));
+        this.props.history.push(`dailyWeather/${moment(updatedDate).format('dddd')}`);
     }
     render() {
         let isWeather = false;
@@ -66,26 +64,25 @@ class Weather extends Component {
                     data.push(item)
                 }
             }
-            console.log(data);
             localStorage.setItem('fullData', JSON.stringify(data));
             isWeather = true;
-            const abcData = data.map((obj, i) => {
-                let newDate = new Date(obj.dt_txt);
-                const imgURL = `owf owf-${obj.weather[0].id} owf-5x`;
+            const abcData = data.map((obj_value, i) => {
+                let updatedDate = new Date(obj_value.dt_txt);
+                const imgURL = `owf owf-${obj_value.weather[0].id} owf-5x`;
                 card.push(
-                    <div className="weather card" key={`main_${i}`} onClick={() => { this.onClickHandler(obj) }}>
-                        <h3 className="card-title" key={`h3_${i}`}>{moment(newDate).format('dddd')}</h3>
-                        <p className="text-muted" key={`p_${i}`}>{moment(newDate).format('MMMM Do')}</p>
+                    <div className="weather_card card" key={`main_${i}`} onClick={() => { this.onClickHandler(obj_value) }}>
+                        <h3 key={`h3_${i}`}>{moment(updatedDate).format('dddd')}</h3>
+                        <p key={`p_${i}`}>{moment(updatedDate).format('MMMM Do')}</p>
                         <div style={{ display: 'flex', justifyContent: 'center' }}>
                             <i className={imgURL} key={`i_${i}`}></i>
-                            <h2 key={`h2_${i}`} style={{ margin: 'auto 5px' }}>{Math.round(obj.main.temp)}<sup>°F</sup></h2>
+                            <h2 key={`h2_${i}`} style={{ margin: 'auto 5px' }}>{Math.round(obj_value.main.temp)}<sup>°F</sup></h2>
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'center' }}>
-                            <h2 key={`h4_${i}`} style={{ margin: 'auto 5px' }}>{Math.round(obj.main.temp_max)}<sup>°F</sup></h2>
-                            <h2 key={`h5_${i}`} style={{ margin: 'auto 5px', color: 'rgb(92,92,92)' }}>{Math.round(obj.main.temp_min)}<sup>°F</sup></h2>
+                            <h2 key={`h4_${i}`} style={{ margin: 'auto 5px' }}>{Math.round(obj_value.main.temp_max)}<sup>°F</sup></h2>
+                            <h2 key={`h5_${i}`} style={{ margin: 'auto 5px', color: 'rgb(92,92,92)' }}>{Math.round(obj_value.main.temp_min)}<sup>°F</sup></h2>
                         </div>
-                        <div className="card-body" key={`card_${i}`}>
-                            <p className="card-text" key={`pdesc_${i}`}>{obj.weather[0].description}</p>
+                        <div key={`card_${i}`}>
+                            <p key={`pdesc_${i}`}>{obj_value.weather[0].description}</p>
                         </div>
                     </div>
                 )
@@ -96,13 +93,13 @@ class Weather extends Component {
                 <div className='leftbg' style={{ width: this.state.weatherData.length ? '20%' : '100%' }}>
                     <div className="SearchBarChilds">
                         {!this.state.weatherData.length ? <h1 className='header-title'>Weather Forecast App</h1> : null}
-                        <h2 className="text-white">Search weather in your city</h2>
+                        <h2 className="text">Search weather in your city</h2>
                         <form onSubmit={this.searchCity}>
                             <TextField
                                 variant="outlined"
                                 defaultValue={this.state.city}
                                 value={this.state.city}
-                                type="text" onChange={this.handleChange} name="city" id="inputSearchCity" placeholder="Search City..."
+                                type="text" onChange={this.handleChange} name="city" placeholder="Search City..."
                                 InputLabelProps={{
                                     shrink: true,
                                 }}
@@ -113,7 +110,7 @@ class Weather extends Component {
                     </div>
                 </div>
                 {this.state.weatherData.length ? (
-                    <div className='rightbg' style={{ width: this.state.weatherData.length ? '80%' : '0%' }}>
+                    <div style={{ width: this.state.weatherData.length ? '80%' : '0%' }}>
                         <h1 className='header-title'>Weather Forecast App</h1>
                         <div style={{ display: 'flex' }}>
                             {isWeather && card}

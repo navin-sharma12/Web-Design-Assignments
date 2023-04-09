@@ -150,7 +150,7 @@ p {
   transform: translate(-50%, -50%);
 }
 
-.weather {
+.weather_card {
   margin: 0px 15px;
   padding: 10px 50px;
   transition: all 0.3s ease 0s;
@@ -211,7 +211,7 @@ p {
   margin-top: 15px;
 }
 
-.text-white {
+.text {
   color: white;
 }
 
@@ -276,7 +276,7 @@ sup {
   margin: 0px;
 }
 
-.widthSpacing {
+.spacing {
   padding: 20px;
   width: 90%;
   position: relative;
@@ -295,7 +295,7 @@ sup {
   color: #463c3c;
 }
 
-.currentTemp {
+.temp {
   display: flex;
   background-color: rgb(112, 199, 249);
   padding: 20px;
