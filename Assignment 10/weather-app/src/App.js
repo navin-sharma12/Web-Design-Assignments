@@ -1,17 +1,16 @@
+import React from 'react';
+import logo from './logo.svg';
 import './App.css';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import MainPage from "./Components/MainPage/main.js"
-import Weather from "./Components/WeatherPage/weather.js"
+import Weather from '../src/components/Weather';
 
-function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route exact path="/main" element={<MainPage/>}></Route>
-        <Route exact path="/weather" element={<Weather/>}></Route>
-      </Routes>
-    </Router>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <Weather history={this.props.history} />
+      </div>
+    );
+  }
 }
 
 export default App;
